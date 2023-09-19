@@ -7,17 +7,18 @@ package:
 
 source:
   url: https://github.com/diffpy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 093980832ebed9bd54f1b4d61d72ce43136a42653f98e76b99d9bcaf6677a682
+  sha256: 52aa6f58b9144d3d039442a425d1fb74ef501eb952d3ef5c0aa35d32c907fe45
 
 build:
   # we need egg_dir to avoid overlapping diffpy/__init__.py files.
   preserve_egg_dir: true
-  number: 6
+  number: 7
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
-    - {{ compiler('cxx') }}     # [py3k or not win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - gsl {{ gsl }}
   host:
     - python
