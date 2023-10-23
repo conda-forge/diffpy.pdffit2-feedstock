@@ -1,12 +1,12 @@
 {% set name = "diffpy.pdffit2" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/diffpy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  url: https://github.com/diffpy/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
   sha256: 52aa6f58b9144d3d039442a425d1fb74ef501eb952d3ef5c0aa35d32c907fe45
 
 build:
