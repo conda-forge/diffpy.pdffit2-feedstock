@@ -1,5 +1,5 @@
 {% set name = "diffpy.pdffit2" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.3" %}
 
 package:
   name: {{ name }}
