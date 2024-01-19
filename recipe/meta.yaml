@@ -1,5 +1,5 @@
 {% set name = "diffpy.pdffit2" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.3" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b2c238441ef498f5979d5a042d6906be5e100478feffefda060e192cab7c72ad
+  sha256: 45f053323bdc7f94d2e12766f8ee0b7d2d3db9efc100c104592cb2473c4577d2
 
 build:
   # we need egg_dir to avoid overlapping diffpy/__init__.py files.
