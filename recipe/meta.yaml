@@ -17,12 +17,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python
     - setuptools
     - pip
 
   run:
-    - python >=3.10
+    - python
     - setuptools
     - six
     - diffpy.structure
