@@ -43,6 +43,7 @@ test:
 
   requires:
     - pip
+    - pytest
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2/
