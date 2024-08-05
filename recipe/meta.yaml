@@ -45,6 +45,9 @@ test:
     - pip
     - pytest
 
+  commands:
+    - python -m pytest
+
 about:
   home: https://github.com/diffpy/diffpy.pdffit2/
   summary: PDFfit2 - real space structure refinement program.
