@@ -1,6 +1,6 @@
 {%- set name = "diffpy.pdffit2" -%}
 {%- set version = "1.4.4rc0" -%}
-{%- set sha256 = "f26c58e6b0001c63635490e9891eeb3ee05722c39e6e11d8784688297e7caecd" -%}
+{%- set sha256 = "47aa0f57234cb2485b0104b65bdd61910ebdaaf745d1206aff5697c228356ce1" -%}
 
 package:
   name: {{ name|lower }}
