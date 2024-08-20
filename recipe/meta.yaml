@@ -46,7 +46,8 @@ test:
     - pytest
 
   commands:
-    - python -m pytest
+    - pip check
+    - pytest --pyargs diffpy.pdffit2
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2/
