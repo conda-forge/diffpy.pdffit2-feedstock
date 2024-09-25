@@ -15,7 +15,10 @@ build:
 
 requirements:
   build:
-    - gsl
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - gsl {{ gsl }}
+    - vs2015_runtime  # [win]
   host:
     - python
     - setuptools
