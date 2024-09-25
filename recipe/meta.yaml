@@ -19,6 +19,8 @@ requirements:
     - {{ compiler('c') }}  # [win or linux]
     - {{ compiler('cxx') }}  # [win or linux]
     - gsl {{ gsl }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
     - setuptools
