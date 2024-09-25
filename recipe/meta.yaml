@@ -45,7 +45,7 @@ about:
     from crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and 
     easy-to-use user interface for chemists, physicists, and materials scientists.
   license: Free To Use But Restricted
-  license_file: LICENSE.txt
+  license_file: LICENSE.rst
   doc_url: https://www.diffpy.org/doc/pdffit2
   dev_url: https://github.com/diffpy/diffpy.pdffit2
 
