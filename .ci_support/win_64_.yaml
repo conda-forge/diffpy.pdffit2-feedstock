@@ -1,8 +1,0 @@
-channel_sources:
-- conda-forge
-channel_targets:
-- conda-forge diffpy.pdffit2_rc
-gsl:
-- '2.7'
-target_platform:
-- win-64

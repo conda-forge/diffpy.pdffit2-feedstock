@@ -10,14 +10,17 @@ source:
   sha256: b3bc252808e61085a34c3a908368704139a8fad74d075096f3fdb9f6ae8a830d
 
 build:
-  number: 0
+  number: 1
+  skip: true  # [py<310]
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [win or linux]
-    - {{ compiler('cxx') }}  # [win or linux]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - gsl {{ gsl }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
     - setuptools
