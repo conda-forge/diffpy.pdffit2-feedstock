@@ -15,7 +15,9 @@ build:
 
 requirements:
   build:
-    - gsl
+    - {{ compiler('c') }}  # Conda automatically selects the appropriate C and C++ compilers
+    - {{ compiler('cxx') }}
+    - gsl {{ gsl }}
   host:
     - python
     - setuptools
