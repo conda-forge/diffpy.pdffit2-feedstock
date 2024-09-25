@@ -16,8 +16,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [win or linux]
-    - {{ compiler('cxx') }}  # [win or linux]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - gsl {{ gsl }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
