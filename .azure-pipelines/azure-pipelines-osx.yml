@@ -17,7 +17,6 @@ jobs:
       osx_64_python3.12.____cpython:
         CONFIG: osx_64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-<<<<<<< HEAD
       osx_arm64_python3.10.____cpython:
         CONFIG: osx_arm64_python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -27,8 +26,6 @@ jobs:
       osx_arm64_python3.12.____cpython:
         CONFIG: osx_arm64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-=======
->>>>>>> 3251f637473bc3077d634c499928437ebd75b45e
   timeoutInMinutes: 360
   variables: {}
 
