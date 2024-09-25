@@ -18,18 +18,15 @@ requirements:
     - {{ compiler('c') }}  # [win or linux]
     - {{ compiler('cxx') }}  # [win or linux]
     - gsl {{ gsl }}
-    - vs2015_runtime  # [win]
   host:
     - python
     - setuptools
     - setuptools-git-versioning >=2.0
     - pip
-    - gsl {{ gsl }}
   run:
     - python
     - six
     - diffpy.structure
-    - gsl {{ gsl }}
 
 test:
   requires:
