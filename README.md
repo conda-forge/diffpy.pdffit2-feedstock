@@ -78,6 +78,7 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>osx_arm64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=18297&branchName=main">
@@ -99,6 +100,8 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+=======
+>>>>>>> 3251f637473bc3077d634c499928437ebd75b45e
               <td>win_64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=18297&branchName=main">
