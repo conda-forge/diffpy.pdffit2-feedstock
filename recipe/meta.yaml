@@ -15,8 +15,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}  # [win or linux]
+    - {{ compiler('cxx') }}  # [win or linux]
     - gsl {{ gsl }}
     - vs2015_runtime  # [win]
   host:
