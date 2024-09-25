@@ -17,12 +17,12 @@ requirements:
   build:
     - gsl
   host:
-    - python >=3.10
+    - python
     - setuptools
     - setuptools-git-versioning >=2.0
     - pip
   run:
-    - python >=3.10
+    - python
     - six
     - diffpy.structure
 
