@@ -2,7 +2,7 @@
 {% set version = "1.4.4rc3" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
@@ -10,10 +10,8 @@ source:
   sha256: b3bc252808e61085a34c3a908368704139a8fad74d075096f3fdb9f6ae8a830d
 
 build:
-  # we need egg_dir to avoid overlapping diffpy/__init__.py files.
-  preserve_egg_dir: true
-  number: 8
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
