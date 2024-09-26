@@ -1,0 +1,3 @@
+channel_targets:
+  - conda-forge diffpy.pdffit2_rc
+  
