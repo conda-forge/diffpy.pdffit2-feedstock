@@ -16,12 +16,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('cxx') }}    # [py3k or not win]
     - gsl {{ gsl }}
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - vc  # [win]
   host:
     - python
     - setuptools
