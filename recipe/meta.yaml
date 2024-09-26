@@ -2,7 +2,7 @@
 {% set version = "1.4.0" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
@@ -10,39 +10,37 @@ source:
   sha256: 52aa6f58b9144d3d039442a425d1fb74ef501eb952d3ef5c0aa35d32c907fe45
 
 build:
-  # we need egg_dir to avoid overlapping diffpy/__init__.py files.
-  preserve_egg_dir: true
-  number: 8
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 1
+  skip: true  # [py<310]
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - gsl {{ gsl }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
-    - pip
     - setuptools
-    - gsl {{ gsl }}
+    - setuptools-git-versioning >=2.0
+    - pip
   run:
     - python
-    - setuptools
     - six
     - diffpy.structure
-    - gsl {{ gsl }}
 
 test:
-  imports:
-    - diffpy
-    - diffpy.pdffit2
-    - diffpy.pdffit2.pdffit2
-    - diffpy.pdffit2.ipy_ext
-    - diffpy.pdffit2.tests
   requires:
     - pip
+    - pytest
+  source_files:
+    - tests
   commands:
     - pip check
+    - pip list
+    - pytest
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
@@ -51,9 +49,8 @@ about:
     The diffpy.pdffit2 package provides functions for calculation and refinement of atomic pair distribution function 
     from crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and 
     easy-to-use user interface for chemists, physicists, and materials scientists.
-  license: BSD-3-Clause
-  license_family: BSD
-  license_file: LICENSE.txt
+  license: Free To Use But Restricted
+  license_file: LICENSE.rst
   doc_url: https://www.diffpy.org/doc/pdffit2
   dev_url: https://github.com/diffpy/diffpy.pdffit2
 
