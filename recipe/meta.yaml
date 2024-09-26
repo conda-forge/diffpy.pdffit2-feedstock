@@ -25,9 +25,13 @@ requirements:
     - python
     - pip
     - setuptools
+    - gsl {{ gsl }}
   run:
+    - python
+    - setuptools
     - six
     - diffpy.structure
+    - gsl {{ gsl }}
 
 test:
   imports:
