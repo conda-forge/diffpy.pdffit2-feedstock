@@ -53,7 +53,7 @@ about:
     easy-to-use user interface for chemists, physicists, and materials scientists.
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE.txt
+  license_file: LICENSE.rst
   doc_url: https://www.diffpy.org/doc/pdffit2
   dev_url: https://github.com/diffpy/diffpy.pdffit2
 
