@@ -1,5 +1,5 @@
 {% set name = "diffpy.pdffit2" %}
-{% set version = "1.4.3" %}
+{% set version = "1.4.4rc3" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 45f053323bdc7f94d2e12766f8ee0b7d2d3db9efc100c104592cb2473c4577d2
+  sha256: b3bc252808e61085a34c3a908368704139a8fad74d075096f3fdb9f6ae8a830d
 
 build:
-  number: 0
+  number: 2
   skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -33,17 +33,18 @@ requirements:
     - diffpy.structure
     - gsl {{ gsl }}
 
-test:
-  imports:
-    - diffpy
-    - diffpy.pdffit2
-    - diffpy.pdffit2.pdffit2
-    - diffpy.pdffit2.ipy_ext
-    - diffpy.pdffit2.tests
+test: 
   requires:
     - pip
+    - pytest
+    - pytest-mock
+    - freezegun
+  source_files:
+    - tests
   commands:
     - pip check
+    - pip list
+    - pytest
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
