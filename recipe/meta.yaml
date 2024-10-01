@@ -37,8 +37,6 @@ test:
   requires:
     - pip
     - pytest
-    - pytest-mock
-    - freezegun
   source_files:
     - tests
   commands:
