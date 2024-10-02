@@ -10,7 +10,7 @@ source:
   sha256: d15fd7fbb4dec3a1dded67d289e179dedd68cae89865572651e734447e5be0f7
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -18,21 +18,19 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - gsl {{ gsl }}
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - {{ stdlib("c") }}
+    - gsl {{ gsl }} 
   host:
     - python
     - pip
     - setuptools
     - setuptools-git-versioning >=2.0
-    - gsl {{ gsl }}
+    - gsl {{ gsl }} 
   run:
     - python
     - setuptools
     - six
     - diffpy.structure
-    - gsl {{ gsl }}
 
 test: 
   requires:
