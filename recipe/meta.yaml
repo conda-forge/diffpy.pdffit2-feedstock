@@ -18,7 +18,8 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - gsl {{ gsl }}
+    - {{ stdlib("c") }}
+    - gsl {{ gsl }} 
   host:
     - python
     - pip
