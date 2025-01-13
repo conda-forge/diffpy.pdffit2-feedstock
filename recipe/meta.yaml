@@ -1,3 +1,4 @@
+{% set python_min = '3.11' %}
 {% set name = "diffpy.pdffit2" %}
 {% set version = "1.5.0rc1" %}
 
@@ -11,7 +12,6 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -21,13 +21,13 @@ requirements:
     - {{ stdlib("c") }}
     - gsl {{ gsl }} 
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools
     - setuptools-git-versioning >=2.0
     - gsl {{ gsl }} 
   run:
-    - python
+    - python >={{ python_min }}
     - setuptools
     - diffpy.structure
 
@@ -35,6 +35,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   source_files:
     - tests
   commands:
