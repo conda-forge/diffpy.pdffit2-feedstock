@@ -1,5 +1,5 @@
 {% set name = "diffpy.pdffit2" %}
-{% set version = "1.4.3" %}
+{% set version = "1.5.0rc1" %}
 
 package:
   name: {{ name }}
@@ -7,46 +7,44 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 45f053323bdc7f94d2e12766f8ee0b7d2d3db9efc100c104592cb2473c4577d2
+  sha256: 63807cc31232d256f35c404b4d127280adb5a10e98384111b896c69642c97e3e
 
 build:
-  # we need egg_dir to avoid overlapping diffpy/__init__.py files.
-  preserve_egg_dir: true
-  number: 8
+  number: 0
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - gsl {{ gsl }}
+    - {{ stdlib("c") }}
+    - gsl {{ gsl }} 
   host:
     - python
     - pip
     - setuptools
-    - gsl {{ gsl }}
+    - setuptools-git-versioning >=2.0
+    - gsl {{ gsl }} 
   run:
     - python
     - setuptools
-    - six
     - diffpy.structure
-    - gsl {{ gsl }}
 
-test:
-  imports:
-    - diffpy
-    - diffpy.pdffit2
-    - diffpy.pdffit2.pdffit2
-    - diffpy.pdffit2.ipy_ext
-    - diffpy.pdffit2.tests
+test: 
   requires:
     - pip
+    - pytest
+  source_files:
+    - tests
   commands:
     - pip check
+    - pip list
+    - pytest
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
-  summary: PDFfit2 - real space structure refinement program.
+  summary: PDFfit2 - real space structure refinement to atomic pair distribution function.
   description: |
     The diffpy.pdffit2 package provides functions for calculation and refinement of atomic pair distribution function 
     from crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and 
@@ -60,5 +58,4 @@ about:
 extra:
   recipe-maintainers:
     - bobleesj
-    - dragonyanglong
     - sbillinge
