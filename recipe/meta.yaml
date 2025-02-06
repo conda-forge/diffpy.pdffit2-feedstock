@@ -19,13 +19,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
-    # - gsl {{ gsl }} 
   host:
     - python
     - pip
     - setuptools
     - setuptools-git-versioning >=2.0
-    # - gsl {{ gsl }} 
   run:
     - python
     - setuptools
