@@ -10,7 +10,11 @@ cxx_compiler:
 - vs2019
 gsl:
 - '2.7'
-python_min:
-- '3.9'
+pin_run_as_build:
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- 3.12.* *_cpython
 target_platform:
 - win-64
