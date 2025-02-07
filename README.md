@@ -116,14 +116,14 @@ Current release info
 Installing diffpy.pdffit2
 =========================
 
-Installing `diffpy.pdffit2` from the `conda-forge/label/diffpy.pdffit2_rc` channel can be achieved by adding `conda-forge/label/diffpy.pdffit2_rc` to your channels with:
+Installing `diffpy.pdffit2` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/diffpy.pdffit2_rc
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/diffpy.pdffit2_rc` channel has been enabled, `diffpy.pdffit2` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `diffpy.pdffit2` can be installed with `conda`:
 
 ```
 conda install diffpy.pdffit2
@@ -138,26 +138,26 @@ mamba install diffpy.pdffit2
 It is possible to list all of the versions of `diffpy.pdffit2` available on your platform with `conda`:
 
 ```
-conda search diffpy.pdffit2 --channel conda-forge/label/diffpy.pdffit2_rc
+conda search diffpy.pdffit2 --channel conda-forge
 ```
 
 or with `mamba`:
 
 ```
-mamba search diffpy.pdffit2 --channel conda-forge/label/diffpy.pdffit2_rc
+mamba search diffpy.pdffit2 --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search diffpy.pdffit2 --channel conda-forge/label/diffpy.pdffit2_rc
+mamba repoquery search diffpy.pdffit2 --channel conda-forge
 
 # List packages depending on `diffpy.pdffit2`:
-mamba repoquery whoneeds diffpy.pdffit2 --channel conda-forge/label/diffpy.pdffit2_rc
+mamba repoquery whoneeds diffpy.pdffit2 --channel conda-forge
 
 # List dependencies of `diffpy.pdffit2`:
-mamba repoquery depends diffpy.pdffit2 --channel conda-forge/label/diffpy.pdffit2_rc
+mamba repoquery depends diffpy.pdffit2 --channel conda-forge
 ```
 
 
