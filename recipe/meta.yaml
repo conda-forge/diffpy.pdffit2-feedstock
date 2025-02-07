@@ -1,5 +1,5 @@
 {% set name = "diffpy.pdffit2" %}
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/d/diffpy_pdffit2/diffpy_pdffit2-{{ version }}.tar.gz
-  sha256: 9ec1149702883381965eedc368621eca293d7781e7e405215d669f471352151c
+  sha256: 78e5ceb714d42ae7333e64c77d5c0b6aa07b1fbf7a9f29ba8323fbeb8d7cbb8f
 
 build:
   number: 0
