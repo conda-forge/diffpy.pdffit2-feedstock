@@ -43,10 +43,8 @@ test:
   commands:
     - pip check
     - pip list
-    - cd /tmp && python -c "import diffpy.pdffit2; print(diffpy.pdffit2.__file__)"  # [not win]
-    - python -c "import os; os.chdir(os.environ['TEMP']); import diffpy.pdffit2; print(diffpy.pdffit2.__file__)"  # [win]
-    - python -m pytest %SRC_DIR%\tests  # [win]
-    - python -m pytest $SRC_DIR/tests   # [not win]
+    - pytest tests  # [not win]
+    - cd /d "%SRC_DIR%" && pytest tests  # [win]
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
