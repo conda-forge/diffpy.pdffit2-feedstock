@@ -40,10 +40,11 @@ test:
     - pytest
   source_files:
     - tests
-  commands:
+commands:
     - pip check
     - pip list
-    - pytest
+    - python -m pytest $SRC_DIR/tests  # [not win]
+    - python -m pytest %SRC_DIR%/tests  # [win]  commands:
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
