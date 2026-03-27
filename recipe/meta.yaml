@@ -40,7 +40,7 @@ test:
     - pytest
   source_files:
     - tests
-commands:
+  commands:
     - pip check
     - pip list
     - python -m pytest $SRC_DIR/tests  # [not win]
