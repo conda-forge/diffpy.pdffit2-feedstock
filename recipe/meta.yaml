@@ -43,8 +43,8 @@ test:
   commands:
     - pip check
     - pip list
-    - python -m pytest --import-mode=importlib "%SRC_DIR%/tests"  # [win]
-    - python -m pytest --import-mode=importlib "$SRC_DIR/tests"   # [not win]
+    - python -m pytest tests  # [not win]
+    - python -m pytest tests  # [win]
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
