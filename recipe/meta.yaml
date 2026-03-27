@@ -44,7 +44,7 @@ test:
     - pip check
     - pip list
     - python -m pytest $SRC_DIR/tests  # [not win]
-    - python -m pytest %SRC_DIR%/tests  # [win]
+    - python -m pytest "%SRC_DIR%/tests"  # [win]
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
