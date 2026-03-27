@@ -43,8 +43,9 @@ test:
   commands:
     - pip check
     - pip list
-    - python -m pytest tests  # [not win]
-    - python -m pytest tests  # [win]
+    - python -c "import diffpy.pdffit2; print(diffpy.pdffit2.__file__)"  # sanity check it finds installed version
+    - cd /D "%TEMP%" && python -m pytest "%SRC_DIR%\tests"  # [win]
+    - cd /tmp && python -m pytest "$SRC_DIR/tests"          # [not win]
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
